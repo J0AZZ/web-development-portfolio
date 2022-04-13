@@ -1,0 +1,61 @@
+Django Web Development notes by j0azz
+https://docs.djangoproject.com/en/3.2/
+
+[+] Create a new Django project
+    django-admin startproject PROJECT
+
+Django comes, by default, with SQLite support. 
+
+[+] Run database migrations on PROJECT
+    python manage.py migrate
+
+[+] Start the development server
+    python manage.py runserver
+
+Once we have created a project, we need to create it's applications. 
+Django comes with default applications, allowed in INSTALLED_APPS, on settings.py. 
+Some of these applications:
+    django.contrib.admin
+    django.contrib.auth
+    django.contrib.contenttypes
+    django.contrib.sessions
+
+[+] Create a Django Application inside PROJECT
+    python manage.py startapp APP
+
+[+] Activating a Django application
+After creating the models of an application, we need to make some changes at settings.py.
+Add the application name (APP in this example) in the variable INSTALLED_APPS;
+after it, run the following command:
+    python manage.py makemigrations APP
+
+[+] Django ORM (object-relational mapper) 
+Compatible with MySQL, MariaDB, SQLite, Oracle, PostgreSQL
+MODEL.objects is the default manager for all MODELs.
+    
+    MODEL.objects.get(...)
+
+    model = MODEL(...)
+    model.save() 
+    # or, simply:   
+    #   model = MODEL(...).save()
+    # or
+    #   MODEL.objects.create(...)
+
+    MODEL.objects.filter(...)
+    # if you want to exclude some results, just do:
+    #   MODEL.objects.filter(...).exclude(...)
+
+    MODEL.objects.order_by(...)
+
+    model = MODEL.objects.get()
+    model.delete()
+
+[+] Django Templates
+    {% tag %}
+
+    {{ variable }}
+
+    {{ variable|filter }}
+
+

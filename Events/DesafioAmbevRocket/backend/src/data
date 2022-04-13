@@ -1,0 +1,59 @@
+{
+    "password": "password",
+    "name": "Bar Floresta Tropical",
+    "email": "tropicalbar@gmail.com",
+    "checkins": 0,
+    "street": "Rua Antero Manuel de Sá Filho",
+    "n": "85",
+    "neighborhood": "Recreio dos bandeirantes",
+    "city": "Rio de janeiro",
+    "uf": "RJ"
+  }
+
+
+
+{
+  "users": [{
+      "id": 1,
+      "name": "Romulo Braga",
+      "email": "romulo@gmail.com",
+      "level": 0,
+      "points": 0
+  }],
+  "pubs": [{
+    "id": 1,
+    "name": "Bar Floresta Tropical",
+    "email": "tropical@gmail.com",
+    "checkins": 0,
+    "address":{
+      "street": "Rua Antero Manuel de Sá Filho",
+      "number": "85",
+      "district": "Recreio dos bandeirantes",
+      "city": "Rio de janeiro",
+      "uf": "RJ"
+    }
+  }, {
+    "id": 2,
+    "name": "Bar Floresta Amazonica",
+    "email": "amazonica@gmail.com",
+    "checkins": 0,
+    "address":{
+      "street": "Avenida Teotônio Viléla",
+      "number": "771",
+      "district": "Recreio dos bandeirantes",
+      "city": "Rio de janeiro",
+      "uf": "RJ"
+  }
+}, {
+    "id": 3,
+    "name": "Bar Floresta Atlântica",
+    "email": "atlantica@gmail.com",
+    "checkins": 0,
+    "address":{
+      "street": "Rua Antero Manuel de Sá Filho",
+      "number": "144",
+      "district": "Recreio dos bandeirantes",
+      "city": "Rio de janeiro",
+      "uf": "RJ"
+  }}]
+}

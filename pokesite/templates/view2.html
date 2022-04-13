@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<head>
+    <title>{{ name }}</title>
+</head>
+
+<body>
+    <div id="searcher">
+        <h1>Pokesite</h1>
+        <h4>Busque um Pokémon pelo nome</h4>
+        <form action="http://localhost:8000/pokemon/" method="get">
+            <input type="text" name="name">
+            <input type="submit">
+        </form>
+    </div>
+
+    <div id="viewer">
+        <div id="name">
+            <h1>{{ name }}</h1>
+        </div>
+        
+        <div id="picture">
+            <img src="{{ picture }}">
+        </div>
+        
+        <p>{{ description }}</p>
+    
+        <div id="main_char">
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Tipo(s)</th>
+                    <th>Possui mais de um gênero</th>
+                </tr>
+                <tr>
+                    <td>{{ name }}</td>
+                    <td>{{ types }}</td>
+                    <td>{{ genders }}</td>
+                </tr>
+            </table>
+    
+            <table>
+                <tr>
+                    <th>HP</th>
+                    <th>Ataque</th>
+                    <th>Defesa</th>
+                    <th>Ataque Especial</th>
+                    <th>Defesa Especial</th>
+                    <th>Velocidade</th>
+                </tr>
+                <tr>
+                    <td>{{ attributes.0 }}</td>
+                    <td>{{ attributes.1 }}</td>
+                    <td>{{ attributes.2 }}</td>
+                    <td>{{ attributes.3 }}</td>
+                    <td>{{ attributes.4 }}</td>
+                    <td>{{ attributes.5 }}</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th>Cadeia de Evoluções</th>
+                    <th>Aparência</th>
+                </tr>
+                <tr>
+                    <td>{{ evolutions.0 }}</td>
+                    <td><img src="{{ ev_chain.0 }}"></td>
+                </tr>
+                <tr>
+                    <td>{{ evolutions.1 }}</td>
+                    <td><img src="{{ ev_chain.1 }}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+</body>
+
+<style>
+    body {
+        padding: 2%;
+    }
+    #searcher {
+        margin: 15px;
+    }
+
+    #viewer {
+        display: inline-block;
+        padding: 2%;
+        border: 2px solid;
+        background-color: lightcyan;
+    }
+
+    table, th, td {
+        border: 1px solid;
+        margin: 20px;
+        border-collapse: collapse;
+    }
+
+    th {
+        background-color: cornflowerblue;
+    }
+
+    td {
+        background-color: darkgray;
+    }
+
+    #picture {
+        display: inline-block;
+        background-color: darkgrey;
+    }
+
+    #main_char {
+        display: inline-block;
+        background-color: lightblue;
+        padding:2px;
+    }
+
+</style>

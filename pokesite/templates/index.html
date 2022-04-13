@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Pokesite</title>
+</head>
+
+<body>
+    <div id="main">
+        <div>
+            <h1>Pokesite</h1>
+            <h4>Busque um Pokémon pelo nome</h4>
+        </div>
+        {{ alert }}
+        <form action="http://localhost:8000/pokemon/" method="get">
+            <input type="text" name="name">
+            <input type="submit">
+        </form>
+    </div>
+    
+</body>
+
+<style>
+    #main {
+        display: inline-block;
+        background-color: lightskyblue;
+        border: 1px solid;
+        padding: 10%;
+    }
+
+    div {
+        background-color: lightcyan;
+        padding: 2%;
+    }
+</style>
