@@ -20,6 +20,7 @@ module.exports = {
         return;
     },
 
+    // read friend's dreams
     async read_whitelisted(req, res) {
         const dreamer = req.body.dreamer;
         const profileId = req.profileId;
@@ -33,7 +34,7 @@ module.exports = {
         return res.json(dreams);
     },
 
-    //dreams ordered from de newest to the oldest
+    // personal dreams ordered from the newest to the oldest
     async read_private(req, res) {
         const profileId = req.profileId;
         const Dreamer = await Profile.findById(profileId);
@@ -41,7 +42,7 @@ module.exports = {
         return res.json(dreams); 
     },
 
-    //create a dream given a body
+    // create a dream given a body
     async create(req, res) {
         const dream = await Dream.create(req.body);
         return res.json(dream);
