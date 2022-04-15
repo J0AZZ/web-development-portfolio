@@ -13,7 +13,8 @@ module.exports = {
     
         await profile.save((err, profile) => {
             if(err) {
-                res.status(500).send({message: err});
+                alert("Servidor em erro: ", err)
+                res.status(500).send({message: "Usuário já existe ou não pode ser criado!", err: err});
                 return;
             }
             return res.json(profile);
