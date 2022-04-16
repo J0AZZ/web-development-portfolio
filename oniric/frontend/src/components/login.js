@@ -28,7 +28,9 @@ class Login extends React.Component {
         }).then((res) => {
             if(res.data.auth) {
                 localStorage.setItem("oniric-user-token", res.data.accessToken)
+                localStorage.setItem("username", username)
                 alert("Logged.")
+                window.location.reload()
             }
         }).catch((err) => {
             alert("Unauthorized by the server!")
@@ -45,7 +47,7 @@ class Login extends React.Component {
                 <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
                 <br></br>
                 Password
-                <input type="text" onChange={(e) => {this.setState({password: e.target.value})}} /> 
+                <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} /> 
                 <br></br>
                 <button onClick={this.handleLogin}>Login</button>
             </div>

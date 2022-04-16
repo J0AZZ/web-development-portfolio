@@ -50,7 +50,7 @@ class Register extends React.Component {
                     <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
                     <br></br>
                     Password
-                    <input type="text" onChange={(e) => {this.setState({password: e.target.value})}} />
+                    <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} />
                     <br></br>
 
                     <button  onClick={this.handleRegister}>Registrar</button>

@@ -3,6 +3,7 @@ import Login from "./components/login"
 import Home from "./components/home"
 import  ReactDOM  from "react-dom";
 import createRoot from 'react-dom/client'
+import PersonalTL from './components/personaltl'
 
 import './App.css';
 import React from "react";
@@ -14,7 +15,8 @@ class App extends React.Component {
     super(props)
 
     this.state = {
-      newOrLogin: "r"
+      newOrLogin: "r",
+      logged: !(localStorage.getItem("oniric-user-token").length == 0)
     }
   }
 
@@ -24,16 +26,26 @@ class App extends React.Component {
     return (
       <div>
         <Home />
-        <button onClick={() => {this.setState({newOrLogin: "l"})}}>
-          Já sou usuário
-        </button>
-        <button onClick={() => {this.setState({newOrLogin: "r"})}}>
-          Novo usuário
-        </button>
-        <div id="loginOrRegister">
+        {
+          !this.state.logged
+          
+          &&
+          
+          <div>
+            <button onClick={() => {this.setState({newOrLogin: "l"})}}>
+              Já sou usuário
+            </button>
+            <button onClick={() => {this.setState({newOrLogin: "r"})}}>
+              Novo usuário
+            </button>
+          </div>
+        }
+        <div id="main-content">
           {/*conditional rendering*/}
-          {this.state.newOrLogin === "l" && <Login />} 
-          {this.state.newOrLogin === "r" && <Register />}
+          {!this.state.logged && this.state.newOrLogin === "l" && <Login />} 
+          {!this.state.logged && this.state.newOrLogin === "r" && <Register />}
+          {(localStorage.getItem('oniric-user-token').length > 0) && <PersonalTL user={localStorage.getItem("username")}/>}
+          
         </div>
   
       </div>
