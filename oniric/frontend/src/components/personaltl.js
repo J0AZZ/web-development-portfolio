@@ -36,7 +36,10 @@ class PersonalTL extends React.Component {
 
                     <div class="list-container">
                         {this.state.dreams.map((dream) => {
-                            return <Dream data={dream} />;
+                            if(dream.private == 0)
+                                return <Dream data={dream} />;
+                            else
+                                return
                         })}
                     </div>
                 }

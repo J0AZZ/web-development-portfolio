@@ -23,7 +23,7 @@ router.post("/signup", [verifySignUp.checkDuplicateUsernameOrEmail], controller.
 router.post("/signin", controller.signin);
 
 //store a dream
-router.post("/:profile/create", DreamsController.create);
+router.post("/:profile/create", authJwt.verifyToken, DreamsController.create);
 
 //read whitelist
 router.get("/whitelist/profiles", authJwt.verifyToken, ProfilesController.whitelist);
