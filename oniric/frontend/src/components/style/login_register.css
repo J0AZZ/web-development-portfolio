@@ -1,0 +1,35 @@
+.form {
+    background-color: aliceblue;
+    padding: 4%;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+
+.form form .form-container {
+    padding-top: -20px;
+
+}
+
+.form form .form-container div {
+    display: inline-block;
+    margin: 5%;
+    padding-top: -50px;
+}
+
+.form form .form-container div input {
+    margin-bottom: 3%;
+    width: 500px;
+    height: 20px;   
+}
+
+.form .form-container div input {
+    margin-bottom: 3%;
+    width: 500px;
+    margin-left: 15px;
+    height: 20px;
+}
+
+.form .form-container div {
+    display: inline-block;
+}

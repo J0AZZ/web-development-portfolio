@@ -1,14 +1,35 @@
-#register-button {
-  background-color: aquamarine;
-  
+button {
+  width: 120px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgb(184, 225, 225);
 }
 
+.header {
+  background-color: rgb(105, 175, 236);
+  border-radius: 20px;
+  padding: 3%;
+  margin: 3%;
+  margin-top: -10%;;
+}
 
+.login_or_register_choice {
+  padding-left: 5%;
+}
 
+body {
+  background-color: #61dafb;
+}
 
+.main_page {
+  
+  padding: 10%;
+  height: 100%;
+}
 
 .App {
   text-align: center;
+  
 }
 
 .App-logo {

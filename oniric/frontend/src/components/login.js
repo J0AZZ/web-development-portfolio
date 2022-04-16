@@ -1,8 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-import req from '../api/backend'
-
+import './style/login_register.css'
 class Login extends React.Component {
     constructor(props) {
         super(props)
@@ -41,14 +40,18 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2>Login</h2>
-                Username
-                <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
-                <br></br>
-                Password
-                <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} /> 
-                <br></br>
+            <div class="form">
+                <div class="form-container">
+                    <div>
+                        <h2>Login</h2>
+                        Username
+                        <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
+                    </div>
+                    <div>
+                        Password
+                        <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} /> 
+                    </div>
+                </div>
                 <button onClick={this.handleLogin}>Login</button>
             </div>
         );

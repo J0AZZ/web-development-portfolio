@@ -1,8 +1,8 @@
 import React from "react"
 import ReactDOM from 'react-dom'
-// import ReactDOM from "react-dom"
-import App from "../App"
-import req from "../api/backend"
+
+import './style/login_register.css'
+
 import axios from "axios"
 class Register extends React.Component {
     constructor(props) {
@@ -40,17 +40,26 @@ class Register extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="form">
                 <h2>Register</h2>
                 <form>
-                    Email
-                    <input type="text" onChange={(e) => {this.setState({email: e.target.value})}} />
-                    <br></br>
-                    Username
-                    <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
-                    <br></br>
-                    Password
-                    <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} />
+                    <div class="form-container">
+                        <div>
+                            <p>Email</p>
+                            <p>Username</p>
+                            <p>Password</p>
+                        </div>
+                        <div>
+                            <input type="text" onChange={(e) => {this.setState({email: e.target.value})}} />
+                            <br></br>
+                            
+                            <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
+                            <br></br>
+                            
+                            <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} />
+                        </div>
+                        
+                    </div>
                     <br></br>
 
                     <button  onClick={this.handleRegister}>Registrar</button>

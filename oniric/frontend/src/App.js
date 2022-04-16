@@ -26,16 +26,20 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div class="main_page">
         <Home />
         {
           this.state.logged
           &&
-          <button onClick={() => {localStorage.setItem("oniric-user-token", ""); window.location.reload()}}>Logout</button>}
+          <button onClick={
+            () => {
+              localStorage.setItem("oniric-user-token", ""); 
+              window.location.reload()
+            }}>Logout</button>}
         {
           !this.state.logged
           &&
-          <div>
+          <div class="login_or_register_choice">
             <button onClick={() => {this.setState({newOrLogin: "l"})}}>
               Já sou usuário
             </button>
