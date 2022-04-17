@@ -33,3 +33,19 @@
 .form .form-container div {
     display: inline-block;
 }
+
+.form form div {
+    display: inline-block;
+    margin: 5px;
+}
+
+.form form .content-container {
+    height: 200px;
+    width: 750px;
+}
+
+.form form .title-input {
+    height: 20px;
+    width: 700px;
+    margin-bottom: 10px; 
+}

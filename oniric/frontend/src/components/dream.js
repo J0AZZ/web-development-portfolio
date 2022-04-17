@@ -11,7 +11,7 @@ class Dream extends React.Component {
     
     render() {
         return (
-            <div>
+            <div class="dream-container">
                 {
                     this.props.data != undefined && this.props.data != []
 
@@ -26,6 +26,9 @@ class Dream extends React.Component {
                         <div class="content-container">
                             <p>
                                 {this.props.data.content}
+                            </p>
+                            <p>
+                                {this.props.data.createdAt}
                             </p>
                         </div>
                     </div>

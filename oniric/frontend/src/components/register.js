@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from 'react-dom'
 
-import './style/login_register.css'
+import './style/form.css'
 
 import axios from "axios"
 class Register extends React.Component {
@@ -46,17 +46,18 @@ class Register extends React.Component {
                     <div class="form-container">
                         <div>
                             <p>Email</p>
+                            <input type="text" onChange={(e) => {this.setState({email: e.target.value})}} />
                             <p>Username</p>
+                            <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
                             <p>Password</p>
+                            <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} />
                         </div>
                         <div>
-                            <input type="text" onChange={(e) => {this.setState({email: e.target.value})}} />
-                            <br></br>
                             
-                            <input type="text" onChange={(e) => {this.setState({username: e.target.value})}} />
-                            <br></br>
                             
-                            <input type="password" onChange={(e) => {this.setState({password: e.target.value})}} />
+                            
+                            
+                            
                         </div>
                         
                     </div>

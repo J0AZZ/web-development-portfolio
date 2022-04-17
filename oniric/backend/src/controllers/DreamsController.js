@@ -24,7 +24,8 @@ module.exports = {
     async read_whitelisted(req, res) {
         const dreamer = req.body.dreamer;
         const profileId = req.profileId;
-        const p = await Profile.find({username: dreamer});
+        const p = await Profile.findById(profileId)
+        console.log("PROFILE: ", p)
         const authorization = p[0].whitelist.find(id => id === profileId);
         
         if(!authorization) {

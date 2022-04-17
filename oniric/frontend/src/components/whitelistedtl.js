@@ -1,13 +1,11 @@
-import React from 'react'
 import axios from 'axios'
+import React from 'react'
 
-import Dream from "./dream"
+import Dream from './dream'
 
-import './style/feed.css'
-
-class PersonalTL extends React.Component {
+class WhitelistedTL extends React.Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             dreams: []
@@ -15,40 +13,37 @@ class PersonalTL extends React.Component {
     }
 
     componentDidMount() {
-        const fetchDreams = axios({
+        alert(localStorage.getItem("oniric-user-token"))
+        const response = axios({
             method: "GET",
-            url: "http://localhost:3030/profile/dreams",
+            url: "http://localhost:3030/whitelist/dreams",
             headers: {
                 "x-access-token": localStorage.getItem("oniric-user-token"),
             }
-        }).then((res) => {
-            
+        }).then((res)=>{
             this.setState({dreams: res.data})
+            console.log(this.state)
+        }).catch((err)=>{
+            alert("Some error occurred!", err)
+            return
         })
-        // this.setState({dreams: fetchDreams.data})
     }
+
     render() {
         return (
             <div class="feed-container">
-                <h2>Sonhado por {this.props.user}</h2>
                 {
                     this.state.dreams != undefined && this.state.dreams != []
-
                     &&
-
                     <div class="list-container">
-                        {this.state.dreams.map((dream) => {
-                            if(dream.private == 0)
-                                return <Dream data={dream} />;
-                            else
-                                return
+                        {this.state.dreams.map((dream)=>{
+                            <Dream data={dream} />
                         })}
                     </div>
                 }
-                
             </div>
         );
     }
 }
 
-export default PersonalTL
+export default WhitelistedTL

@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 
-import './style/login_register.css'
+import './style/form.css'
 class Login extends React.Component {
     constructor(props) {
         super(props)

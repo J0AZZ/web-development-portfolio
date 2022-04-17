@@ -3,11 +3,14 @@ import Login from "./components/login"
 import Home from "./components/home"
 import PersonalTL from './components/personaltl'
 import PublicTL from './components/publictl'
+import CreateDream from "./components/createdream"
+import WhitelistedTL from './components/whitelistedtl'
 
 import  ReactDOM  from "react-dom";
 import React from "react";
 
 import './App.css';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -18,7 +21,8 @@ class App extends React.Component {
     this.state = {
       newOrLogin: "r",
       logged: !(localStorage.getItem("oniric-user-token").length == 0),
-      public: false,
+      public: true,
+      whitelisted: false,
     }
   }
 
@@ -56,22 +60,45 @@ class App extends React.Component {
             this.state.logged
             &&
             <div>
-
-              <button onClick={() => {this.setState({public: false})}}>
+              <button onClick={() => {this.setState({create: true})}}>Save a Dream</button>
+              <br></br>
+              <button onClick={() => {this.setState({public: !this.state.public, whitelisted: false})}}>
                 Personal
               </button>
-              <button onClick={() => {this.setState({public: true})}}>
+              {/* <button onClick={() => {this.setState({whitelisted: !this.state.whitelisted})}}>
+                Whitelisted
+              </button> */}
+              <button onClick={() => {this.setState({public: !this.state.public, whitelisted: false})}}>
                 Public
               </button>
             </div>
           }
           {
-            (localStorage.getItem('oniric-user-token').length > 0) && !this.state.public 
+            this.state.create 
+            &&
+            <CreateDream /> 
+          }
+          {
+            !this.state.create && 
+            (localStorage.getItem('oniric-user-token').length > 0) && 
+            !this.state.public &&
+            !this.state.whitelisted
+
             && 
             <PersonalTL user={localStorage.getItem("username")}/>
           }
+          {/* {
+            !this.state.create && 
+            (localStorage.getItem('oniric-user-token').length > 0) && 
+            this.state.whitelisted
+            &&
+            <WhitelistedTL />
+          } */}
           {
-            (localStorage.getItem('oniric-user-token').length > 0) && this.state.public
+            !this.state.create && 
+            (localStorage.getItem('oniric-user-token').length > 0) && 
+            this.state.public &&
+            !this.state.whitelisted
             &&
             <PublicTL />
           }

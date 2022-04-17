@@ -3,6 +3,8 @@ import Dream from "./dream"
 import React from 'react';
 import axios from 'axios'
 
+import './style/feed.css'
+
 class PublicTL extends React.Component {
     constructor(props) {
         super(props);
@@ -27,7 +29,7 @@ class PublicTL extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="feed-container">
 
                 {
 
