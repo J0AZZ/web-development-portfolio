@@ -5,7 +5,7 @@ const routes = require('./routes/routes')
 const cors = require('cors');
 
 //database connection
-const mongoDB = "mongodb+srv://britof:<1123581321>@cluster0-oimg3.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const mongoDB = "mongodb+srv://britof:PASSWORD@cluster0-oimg3.mongodb.net/<dbname>?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true})
         .then(() => {
             console.log("Successfully connected to MongoDB"); 
