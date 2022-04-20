@@ -4,7 +4,7 @@ const cors = require('cors')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose').set('debug', true)
 
-const mongodb = "mongodb+srv://britof:<1123581321>@cluster0-oimg3.mongodb.net/<dbname>?retryWrites=true&w=majority"
+const mongodb = "mongodb+srv://britof:PASSWORD123@cluster0-oimg3.mongodb.net/<dbname>?retryWrites=true&w=majority"
 mongoose.connect(mongodb, {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
     console.log("Database connected.")
 }).catch((err) => {
