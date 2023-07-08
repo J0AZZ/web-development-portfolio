@@ -1,0 +1,43 @@
+{% load cms_tags sekizai_tags %}
+<html>
+<head>
+    <title>Home</title>
+    {% render_block "css" %}
+</head>
+<body style="background-color: #2d2d2f; ">
+    {% cms_toolbar %}
+    {% placeholder "content" %}
+    {% render_block "js" %}
+    <div style=" text-align: center; width: 100%;">
+        <div name="column" style="width: 900px; display: inline-block; ">
+            <figure>
+                <img src="../static/logo.png"> 
+            </figure> 
+            <div style="margin-left: auto; margin-right: auto;">
+                <div style="display: inline-block">
+                    <div style="display: flex;  height: 100px; margin: 20px;">
+                        <div style="height: 25px; float: left;">
+                            <a href="/home"><h3 style=""><img style="width: 300px;"src="../static/intro-button.png"></h3></a>
+                        </div>
+                        <div style="height: 50px; float: right;">
+                            <a href="/contact"><h3 style=""><img style="width: 300px;"src="../static/cont-button.png"></h3></a>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <h2 style="margin: 20px; color: white;"> Introdução </h2>
+                <figure>
+                    <img src="../static/item.png"> 
+                </figure>
+                <div style=" border-radius: 10px; background-color: #e57e61; padding: 30px; margin: 50px;">
+                    <p style="color: white;">
+                       {% placeholder "home_text" %}
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    <div>
+
+</body>
+</html>
